@@ -1,0 +1,57 @@
+<div class="main-content">
+  <div
+    class="input-container">
+    <input
+      type="text"
+      class="b-inputtext"
+      name="Add toDo"
+      value=""
+      id="todo-input"
+      placeholder="Enter To do"
+      required
+      autocomplete="off"
+      #todoInput>
+    <label
+      class="visually-hidden"
+      for="todo-input"
+      id="lbl-to-do">
+      Enter to do
+    </label>
+
+    <select
+      class="priority-options"
+      #priorityOption
+    >
+      <option
+        *ngFor="let priority of typesOfPriority">
+        {{priority}}
+      </option>
+    </select>
+    <button (click)="addToDoList({
+      name: todoInput.value,
+      priority: priorityOption.value
+    })">
+      Add
+    </button>
+  </div>
+
+
+  <ul>
+    <button
+      *ngIf="uniqueSelected.length && toDolist.length"
+      (click)="deleteSelected($event)">
+      Delete selected
+    </button>
+
+    <li
+      class="to-do-wrapper"
+      *ngFor="let listItem of toDolist;">
+      <app-to-do-list
+        (removeItem)="removeToDoFromList($event)"
+        (editedItem)="editItemFromList($event)"
+        (selectedItem)="getSelectedItem($event)"
+        [listItem]=listItem>
+      </app-to-do-list>
+    </li>
+  </ul>
+</div>
