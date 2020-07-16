@@ -10,13 +10,13 @@ Used Css (SCSS can also be used)
 Used flexbox to create grid layout
 
 Reusable component 
-- To do list item
-Provided Accessibility support with aria tags and semantic HTML
+- 1) To do list item
+ 2) Provided Accessibility support with aria tags and semantic HTML
 
 Testing --
 
-Unit test cases using jasmine and Karma for To do list item
-Accessibility verified using - NVDA
+1) Unit test cases using jasmine and Karma for To do list item
+2) Accessibility verified using - NVDA
 
 ## Development server
 
