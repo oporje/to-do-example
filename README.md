@@ -4,9 +4,10 @@ Time taken - 3 hours
 
 Es6 features used such as - 
  1) Set to store unique values 
- 2) filter, map methods for array manipulation with immutability
+ 2) filter, map methods, spread operator for array manipulation with immutability
 
 Used Css (SCSS can also be used)
+Used flexbox to create grid layout
 
 Reusable component 
 - To do list item
