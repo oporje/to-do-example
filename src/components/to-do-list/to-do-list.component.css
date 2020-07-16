@@ -1,0 +1,29 @@
+button {
+  color: #fff;
+  background-color: #177bb5;
+  border-color: transparent;
+  box-shadow: 0 2px 0 #1c639c;
+  min-height: 2rem;
+  min-width: 4rem;
+}
+
+.btn-edit {
+  margin: 0px 1rem;
+}
+
+.item-label {
+  min-width: 11rem;
+  display: inline-flex;
+}
+
+input[type="text"] {
+  min-height: 2rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.col {
+  flex: 1;
+}

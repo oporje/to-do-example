@@ -1,0 +1,42 @@
+<input
+  class="col"
+  type="checkbox"
+  (change)="toggleCheckbox(listItem)"
+  [checked]="listItem?.isSelected"
+>
+
+<span
+  class="item-label col"
+  *ngIf="!listItem?.showEdit">
+  {{listItem?.name}}
+</span>
+
+<input
+  (keydown)="onEditInputKeydown($event, listItem, true)"
+  *ngIf="listItem?.showEdit"
+  type="text"
+  #todoInput
+  class="col"
+  autocomplete="off"
+  value="{{listItem?.name}}">
+
+<span class="item-priority col">
+  {{listItem?.priority}}
+</span>
+<button
+  *ngIf="listItem?.showEdit"
+  class="btn-edit col"
+  (click)="onEditInputKeydown($event, listItem);">
+  Save
+</button>
+<button
+  *ngIf="!listItem?.showEdit"
+  class="btn-edit col"
+  (click)="editToDoItem(listItem);">
+  Edit
+</button>
+<button
+  class="col"
+  (click)="removeToDoFromList(listItem);">
+  Delete
+</button>
