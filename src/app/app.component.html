@@ -35,23 +35,18 @@
     </button>
   </div>
 
+  <button
+  class="btn-delete"
+  *ngIf="toDolist.length"
+  [disabled]="!uniqueSelected.length || !toDolist.length"
+  (click)="deleteSelected($event)">
+  Delete selected
+  </button>
 
-  <ul>
-    <button
-      *ngIf="uniqueSelected.length && toDolist.length"
-      (click)="deleteSelected($event)">
-      Delete selected
-    </button>
-
-    <li
-      class="to-do-wrapper"
-      *ngFor="let listItem of toDolist;">
-      <app-to-do-list
-        (removeItem)="removeToDoFromList($event)"
-        (editedItem)="editItemFromList($event)"
-        (selectedItem)="getSelectedItem($event)"
-        [listItem]=listItem>
-      </app-to-do-list>
-    </li>
-  </ul>
+  <app-to-do-list
+    (removeItem)="removeToDoFromList($event)"
+    (editedItem)="editItemFromList($event)"
+    (selectedItem)="getSelectedItem($event)"
+    [toDolist]=toDolist>
+  </app-to-do-list>
 </div>

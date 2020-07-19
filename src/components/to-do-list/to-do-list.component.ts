@@ -8,7 +8,7 @@ import { KEY_CODE } from '../../model/key-code.model';
 })
 export class TodoListComponent {
 
-  @Input('listItem') listItem;
+  @Input('toDolist') toDolist;
   @Output() removeItem = new EventEmitter();
   @Output() editedItem = new EventEmitter();
   @Output() selectedItem = new EventEmitter();

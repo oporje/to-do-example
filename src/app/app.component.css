@@ -1,12 +1,29 @@
 .main-content {
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
   flex-direction: column;
-  align-items: center;
-}
+  justify-content: spa;
+  margin-top: 2rem;
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding: 10px;
+  }
+  
+  .input-container {
+  display: flex;
+  margin: 10px 0;
+  }
+  
 
-.visually-hidden {
+  .b-inputtext {
+  flex: 3;
+  }
+  .priority-options , .add-to-do {
+  flex: 1;
+  }
+  
+  .visually-hidden {
   position: absolute !important;
   clip: rect(0 0 0 0) !important;
   border: 0 !important;
@@ -16,32 +33,23 @@
   padding: 0 !important;
   width: 1px !important;
   white-space: nowrap !important;
-}
-
-button {
+  }
+  
+  button {
   color: #fff;
   background-color: #177bb5;
   border-color: transparent;
   box-shadow: 0 2px 0 #1c639c;
   min-height: 2rem;
   min-width: 4rem;
-}
+  }
 
-.priority-options {
+  .btn-delete {
+    margin: 10px 0;
+    max-width: 10rem;
+  }
+  
+  .priority-options {
   min-height: 2rem;
   margin: 0px 1rem;
-}
-
-.btn-edit {
-  margin: 0px 1rem;
-}
-
-input {
-  min-height: 2rem;
-}
-
-li.to-do-wrapper {
-  min-width: 20rem;
-  margin-top: 2rem;
-  list-style: none;
-}
+  }

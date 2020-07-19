@@ -1,42 +1,60 @@
-<input
-  class="col"
-  type="checkbox"
-  (change)="toggleCheckbox(listItem)"
-  [checked]="listItem?.isSelected"
->
-
-<span
-  class="item-label col"
-  *ngIf="!listItem?.showEdit">
-  {{listItem?.name}}
-</span>
-
-<input
-  (keydown)="onEditInputKeydown($event, listItem, true)"
-  *ngIf="listItem?.showEdit"
-  type="text"
-  #todoInput
-  class="col"
-  autocomplete="off"
-  value="{{listItem?.name}}">
-
-<span class="item-priority col">
-  {{listItem?.priority}}
-</span>
-<button
-  *ngIf="listItem?.showEdit"
-  class="btn-edit col"
-  (click)="onEditInputKeydown($event, listItem);">
-  Save
-</button>
-<button
-  *ngIf="!listItem?.showEdit"
-  class="btn-edit col"
-  (click)="editToDoItem(listItem);">
-  Edit
-</button>
-<button
-  class="col"
-  (click)="removeToDoFromList(listItem);">
-  Delete
-</button>
+<table *ngIf="toDolist.length">
+	<th> Select </th>
+	<th> To do name </th>
+	<th> Priority </th>
+	<th> Edit </th>
+	<th> Delete </th>
+	<tbody>
+    <tr 
+      *ngFor="let listItem of toDolist;">
+			<td>
+        <input 
+          class="col" 
+          type="checkbox" 
+          (change)="toggleCheckbox(listItem)" 
+          [checked]="listItem?.isSelected"> 
+      </td>
+			<td> 
+        <span 
+          class="item-label col" 
+          *ngIf="!listItem?.showEdit">
+          {{listItem?.name}}
+        </span>
+        <input 
+          (keydown)="onEditInputKeydown($event, listItem, true)" 
+          *ngIf="listItem?.showEdit" 
+          type="text" 
+          #todoInput 
+          class="col" 
+          autocomplete="off" 
+          value="{{listItem?.name}}"> 
+        </td>
+			  <td> 
+          <span class="item-priority col">
+            {{listItem?.priority}}
+          </span> 
+        </td>
+			  <td>
+          <button 
+            *ngIf="listItem?.showEdit" 
+            class="btn-edit col" 
+            (click)="onEditInputKeydown($event, listItem);"> 
+            Save 
+          </button>
+          <button 
+            *ngIf="!listItem?.showEdit" 
+            class="btn-edit col" 
+            (click)="editToDoItem(listItem);"> 
+            Edit 
+          </button>
+			  </td>
+			  <td>
+          <button 
+            class="col" 
+            (click)="removeToDoFromList(listItem);"> 
+            Delete 
+          </button>
+			  </td>
+		  </tr>
+	  </tbody>
+  </table>
